@@ -74,5 +74,118 @@ select {
   }
 }
 
-/* font-family: 'Josefin Sans', sans-serif; */
+:root{
+    --desaturated-red: hsl(0, 36%, 70%);
+    --soft-red: hsl(0, 93%, 68%);
 
+    --dark-grayish-red: hsl(0, 6%, 24%);
+
+    --gradient-active: linear-gradient(135deg, hsl(0, 92%, 90%), hsl(0, 77%, 92%));
+    --gradient-passive: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+}
+
+body{
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+h1{
+    font-size: 3rem;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    color: var(--dark-grayish-red);
+}
+
+p{
+    padding: 2rem;
+    color: var(--desaturated-red);
+}
+
+.container{
+    width: 90%;
+    max-width: 400px;
+    margin-inline: auto;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border: 1px solid black;
+}
+
+.logo{
+    padding: 2rem;
+}
+
+.hero-mobile{
+    width: 100%;
+}
+
+.info{
+    text-align: center;
+    padding: 4rem 0;
+}
+
+.we-color{
+    color: var(--desaturated-red);
+    font-weight: 100;
+}
+
+.mail-form{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    width: 85%;
+    margin-inline: auto;
+    border-radius: 50px;
+    border: 1px solid var(--desaturated-red);
+}
+
+input[type=text]{
+    padding: .8rem 1.5rem;
+    border: none;
+    border-radius: 50px;
+    color: var(--desaturated-red);   
+}
+
+input[type=button]{
+    width: 70px;
+    border-radius: 50px;
+    border: none;
+    padding: 0;
+    height: 50px;
+    background-image: url(images/icon-arrow.svg), var(--gradient-passive);
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: .5s ease-in-out;
+}
+
+input[type=button]:hover{
+    background-image: url(images/icon-arrow.svg), var(--gradient-active);
+}
+
+.media-switcher{
+    display: flex;
+}
+
+.desktop,
+.desktop-bg{
+    display: none;
+}
+
+.attribution{
+    text-align: center;
+    color: var(--dark-grayish-red);
+    padding-bottom: 2rem;
+}
+
+.attribution a{
+    color: var(--dark-grayish-red);
+    text-decoration: none;
+    transition: .2s ease-in;
+}
+
+.attribution a:hover{
+    color: var(--desaturated-red);
+}
