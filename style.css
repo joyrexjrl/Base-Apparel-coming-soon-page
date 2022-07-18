@@ -97,7 +97,7 @@ h1{
 }
 
 p{
-    padding: 2rem;
+    padding: 2rem 0;
     color: var(--desaturated-red);
 }
 
@@ -115,7 +115,13 @@ p{
 }
 
 .logo{
-    padding: 2rem;
+  padding: 2rem;
+}
+
+.info{
+    width: 80%;
+    margin-inline: auto;
+    padding: 5rem 0;
 }
 
 .hero-mobile{
@@ -124,7 +130,6 @@ p{
 
 .info{
     text-align: center;
-    padding: 4rem 0;
 }
 
 .we-color{
@@ -133,16 +138,43 @@ p{
 }
 
 .mail-form{
+    position: relative;
     display: flex;
     justify-content:space-between;
     align-items: center;
-    width: 85%;
-    margin-inline: auto;
     border-radius: 50px;
-    border: 1px solid var(--desaturated-red);
+    border: 2px solid var(--desaturated-red);
+}
+
+.error,
+.error-text,
+.success{
+    position: absolute;
+}
+
+.error{
+    right: 25%;
+    z-index: 50;
+    opacity: 0;
+    transition: .2s ease-in;
+}
+
+.error-text,
+.success{
+  font-size: .7rem;
+  color: var(--soft-red);
+  top: 55%;
+  left: 6%;
+  opacity: 0;
+  transition: .2s ease-in;
+}
+
+.active{
+  opacity: 1;
 }
 
 input[type=text]{
+    width: 100%;
     padding: .8rem 1.5rem;
     border: none;
     border-radius: 50px;
@@ -150,19 +182,26 @@ input[type=text]{
 }
 
 input[type=button]{
+    position: absolute;
+    top: -2px;
+    right: -2px;
     width: 70px;
     border-radius: 50px;
     border: none;
     padding: 0;
-    height: 50px;
+    height: 54px;
     background-image: url(images/icon-arrow.svg), var(--gradient-passive);
     background-repeat: no-repeat;
     background-position: center;
-    transition: .5s ease-in-out;
+    z-index: 100;
 }
 
 input[type=button]:hover{
     background-image: url(images/icon-arrow.svg), var(--gradient-active);
+}
+
+input:focus-visible{
+    outline: 2px solid var(--soft-red);
 }
 
 .media-switcher{
@@ -174,10 +213,14 @@ input[type=button]:hover{
     display: none;
 }
 
+.footer{
+  padding: 1rem 0;
+  background-color: white;
+}
+
 .attribution{
     text-align: center;
     color: var(--dark-grayish-red);
-    padding-bottom: 2rem;
 }
 
 .attribution a{
@@ -188,4 +231,45 @@ input[type=button]:hover{
 
 .attribution a:hover{
     color: var(--desaturated-red);
+}
+
+@media (min-width: 940px){
+    .hero-mobile{
+      display: none;
+    }
+
+    .desktop,
+    .desktop-bg{
+      display: block;
+    }
+
+    .mobile{
+      width: 55%;
+    }
+
+    .desktop{
+      width: 45%;
+    }
+
+    .desktop-bg{
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+    }
+
+    .container{
+      max-width: 1000px;
+      overflow: hidden;
+    }
+
+    .logo{
+      padding: 3.5rem;
+    }
+
+    .info{
+      text-align: left;
+    }
 }

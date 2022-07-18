@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap" rel="stylesheet"> 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
+  <script src="email.js" defer></script>
   <title>Frontend Mentor | Base Apparel coming soon page</title>
   
 </head>
@@ -22,9 +23,12 @@
           <h1><span class="we-color">We're</span><br>coming<br>soon</h1>
           <p>Hello fellow shoppers! We're currently building our new fashion store. 
           Add your email below to stay up-to-date with announcements and our launch deals.</p>
-          <form class="mail-form" action="">
-            <input type="text" name="email" placeholder="Email Address">
-            <input type="button">
+          <form class="mail-form" name="form" action="#">
+            <input class="focus-me" type="text" name="email" placeholder="Email Address">
+            <input type="button" name="submit" onclick="ValidateEmail(document.form.email)">
+            <img class="error" src="images/icon-error.svg" alt="error">
+            <p class="error-text">Please provide a valid email</p>
+            <p class="success">Thank you for signing up</p>
           </form>
         </section>
         
@@ -34,7 +38,7 @@
       </div>
     </div>
 
-    <footer>
+    <footer class="footer">
       <div class="attribution">
         Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.<br>
         Coded by <a href="https://www.frontendmentor.io/profile/joyrexjrl" target="_blank">Rick Lozano</a>.
